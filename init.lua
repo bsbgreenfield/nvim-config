@@ -1,0 +1,8 @@
+require("config.lazy")
+require("config.remap")
+require("config.options")
+require("config.lsp")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("zls")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("cssls")
