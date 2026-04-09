@@ -17,6 +17,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 	end,
 })
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { buffer = ev.buffer, silent = true })
+		vim.keymap.set(
+			"n",
+			"<leader>D",
+			"<cmd>Telescope diagnostics bufnr=0<CR>",
+			{ buffer = ev.buffer, silent = true }
+		)
+	end,
+})
 
 -- This is copied straight from blink
 -- https://cmp.saghen.dev/installation#merging-lsp-capabilities
@@ -28,7 +39,6 @@ local capabilities = {
 		},
 	},
 }
-
 vim.lsp.config("*", {
 	capabilities = capabilities,
 	root_markers = { ".git" },

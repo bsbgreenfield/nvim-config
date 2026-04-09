@@ -18,7 +18,7 @@ opt.pumheight = 8
 opt.cursorline = true
 opt.signcolumn = "yes"
 
-opt.clipboard:append("unnamedplus")
+opt.clipboard:append("unnamed,unnamedplus")
 
 opt.splitright = true
 opt.splitbelow = true

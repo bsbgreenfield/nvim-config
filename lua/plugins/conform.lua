@@ -6,8 +6,6 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt", lsp_format = "fallback" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
 				typescriptreact = { "prettierd", lsp_format = "fallback" },
 				zig = { "zigfmt", lsp_format = "fallback" },
 				css = { "prettierd", "prettier", stop_after_first = true },

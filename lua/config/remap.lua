@@ -3,9 +3,6 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<Esc>")
 keymap.set("i", "kj", "<Esc>")
 keymap.set("n", "n", "i<Cr><Esc>")
--- keymap.set("i", "&^", "<End>") -- only works for alacritty!!!
-keymap.set("n", "<S-Left>", "<C-w><Left>")
-keymap.set("n", "<S-Right>", "<C-w><Right>")
 
 local get_distance_to_close_delim = function()
 	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -50,22 +47,22 @@ vim.keymap.set("i", "<Tab>", function()
 	end
 end, { expr = true, noremap = true })
 
--- windows
+-- windows:
 keymap.set("n", "<leader>wv", "<C-w>v")
 keymap.set("n", "<leader>we", "<C-w>=")
 keymap.set("n", "<leader>ww", "<cmd>close<CR>")
 keymap.set("n", "<C-h>", "<C-w>h")
 keymap.set("n", "<C-l>", "<C-w>l")
 keymap.set("n", "<C-o>", "<cmd>Neotree toggle<CR>")
-keymap.set("n", "<C-,>", "<C-w><2")
-keymap.set("n", "<C-.>", "<C-w>>2")
+keymap.set("n", "<", "<C-w><2")
+keymap.set("n", ">", "<C-w>>2")
 keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>")
 
 --buffers
 keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>")
-keymap.set("n", "<C-]>", "<cmd>bnext<CR>")
-keymap.set("n", "<C-[>", "<cmd>bprev<CR>")
-
+keymap.set("n", "<C-[>", "<cmd>bprev<cr>")
+keymap.set("n", "<C-]>", "<cmd>bnext<cr>")
 -- commands
 keymap.set("n", "<C-s>", "<cmd>w<CR>")
 keymap.set("i", "<C-s>", "<cmd>w<CR>")
